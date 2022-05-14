@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 gcloud services enable --quiet \
     bigquery-json.googleapis.com \
@@ -8,4 +8,3 @@ gcloud services enable --quiet \
     iam.googleapis.com \
     pubsub.googleapis.com \
     run.googleapis.com
-

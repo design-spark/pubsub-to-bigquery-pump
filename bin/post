@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DIR="$(dirname "$0")"
 . "${DIR}/config"
@@ -15,5 +15,3 @@ SERVICE_URL=$(gcloud beta run services describe ${SERVICE_NAME} \
 curl -H "Content-Type: application/json" \
     -d @./sample/sample-notification.json \
     -X POST "${SERVICE_URL}/v1/notif?token=${NOTIF_TOKEN}" | jq "."
-
-

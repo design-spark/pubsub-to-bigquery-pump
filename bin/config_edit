@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# config editor to set parameter value for region, topic, dataset and output bq table name
+# corresponf to the config values
+# TOPIC_NAME
+# DATASET_NAME
+# TABLE_NAME
+# SERVICE_REGION
+
+if [ "$#" -ne 4 ]; then
+    echo "Four arguements required for TOPIC_NAME DATASET_NAME TABLE_NAME SERVICE_REGION"
+    exit 1
+fi
+
+
+# replace assignment regex value with variable
+sed -i -E 's/^(TOPIC_NAME=")[a-z-]+(".*)/\1'"$1"'\2/'  config
+sed -i -E 's/^(DATASET_NAME=")[a-z]+(".*)/\1'"$2"'\2/' config
+sed -i -E 's/^(TABLE_NAME=")[a-z]+(".*)/\1'"$3"'\2/'  config
+sed -i -E 's/^(SERVICE_REGION=")[a-z0-9-]+(".*)/\1'"$4"'\2/' config

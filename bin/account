@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DIR="$(dirname "$0")"
 . "${DIR}/config"
@@ -40,4 +40,3 @@ gcloud projects add-iam-policy-binding $PROJECT \
 gcloud projects add-iam-policy-binding $PROJECT \
 	--member "serviceAccount:${SA_NAME}@${PROJECT}.iam.gserviceaccount.com" \
     --role roles/monitoring.metricWriter
-

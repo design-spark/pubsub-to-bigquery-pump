@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # SOUURCE - PubSub topic (subscription will be created)
 TOPIC_NAME="my-iot-events"
